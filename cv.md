@@ -10,10 +10,10 @@ _Web designer and programmer, specializing in mobile interfaces for iOS. I am co
 * Animations and interactive
 
 **Experience:**
-*Mobile design project for iOS
+* Mobile design project for iOS
 Development of interfaces adapted to iOS features. Using Figma to design and optimize UX/UI.
 
 **Education:**
-*IBBSU Web Designer/programmer
+* IBBSU Web Designer/programmer
 
 **English level:**  Intermediate(B1)
