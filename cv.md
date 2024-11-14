@@ -11,4 +11,4 @@ Experience:
 Development of interfaces adapted to iOS features. Using Figma to design and optimize UX/UI.
 Education:
 +IBBSU Web Designer/programmer
-English level:  Intermediate
+English level:  Intermediate(B1)
