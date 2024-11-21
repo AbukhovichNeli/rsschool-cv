@@ -22,22 +22,32 @@
             <div><img class="logo_icon" src="./img/logo_icon.png" alt="logo"></div>
             <span class="logo_text">THE GIFTS</span>
         </a>
-        <ul class="menu_container">
-            <li class="chapter">gifts</li>
-            <li class="chapter">about</li>
-            <li class="chapter">best</li>
-            <li class="chapter">contacts</li>
-        </ul>
+        <nav>
+            <ul class="menu_container">
+                <li class="menu_item">
+                    <a href="./gifts.html">gifts</a>
+                </li>
+                <li class="menu_item">
+                    <a href="#about">about</a>
+                </li>
+                <li class="menu_item">
+                    <a href="#best">best</a>
+                </li>
+                <li class="menu_item">
+                    <a href="#contacts">contacts</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <section class="hero_section">
         <div class="hero_container">
             <span class="caption">Merry Christmas</span>
             <h1>Gift yourself the magic of new possibilities</h1>
-            <button class="action_small">Explore Magical Gifts</button>
+            <a href="./gifts.html"><button class="action_small_btn">Explore Magical Gifts</button></a>
             <span class="caption">and Happy New Year</span>
         </div>
     </section>
-    <section class="about_section">
+    <section class="about_section" id="about">
         <div class="about_container">
             <div class="about_text_box">
                 <span class="caption" style="color: #FF4646;">About</span>
@@ -68,7 +78,7 @@
         </div>
 
     </section>
-    <section class="best_gift_section">
+    <section class="best_gift_section" id="best">
         <div class="best_gift_container">
             <span class="caption">Best Gifts</span>
             <h2>especially for you</h2>
@@ -107,7 +117,7 @@
     <section class="CTA_section">
         <div class="CTA_container">
             <h2>Ready to start your journey to a better version of yourself?</h2>
-            <button class="action_small">Explore Magical Gifts</button>
+            <a href="./gifts.html"><button class="action_small_btn">Explore Magical Gifts</button></a>
             <span class="caption">The New Year is Coming Soon...</span>
             <div class="timer">
                 <div class="timer_sector">
@@ -143,23 +153,30 @@
     <footer>
         <div class="footer_container">
             <div class="group_footer_cards">
-                <div class="footer_card">
-                    <img src="./img/santaClaus_img.png" alt="santa claus" class="footer_img">
-                    <span class="action_large">+375 (29) 111-22-33</span>
-                    <h3>Call Us</h3>
-                </div>
-                <div class="footer_card">
-                    <img src="./img/christmas_tree.png" alt="christmas tree" class="footer_img">
-                    <span class="action_large">Magic forest</span>
-                    <h3>meet us</h3>
-                </div>
-                <div class="footer_card">
-                    <img src="./img/snaik_img.png" alt="snaik" class="footer_img">
-                    <span class="action_large">gifts@magic.com</span>
-                    <h3>write us</h3>
-                </div>
+                <a href="tel:+375291112233">
+                    <div class="footer_card">
+                        <img src="./img/santaClaus_img.png" alt="santa claus" class="footer_img">
+                        <span class="action_large">+375 (29) 111-22-33</span>
+                        <h3>Call Us</h3>
+                    </div>
+                </a>
+                <a
+                    href="https://www.google.by/maps/place/Il+Etait+une+Fois/@48.856147,2.3567166,17z/data=!4m14!1m7!3m6!1s0x47e66e027730b693:0xf0895ae755275a52!2sIl+Etait+une+Fois!8m2!3d48.8561435!4d2.3592915!16s%2Fg%2F1tycvzbh!3m5!1s0x47e66e027730b693:0xf0895ae755275a52!8m2!3d48.8561435!4d2.3592915!16s%2Fg%2F1tycvzbh?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D">
+                    <div class="footer_card">
+                        <img src="./img/christmas_tree.png" alt="christmas tree" class="footer_img">
+                        <span class="action_large">Magic forest</span>
+                        <h3>meet us</h3>
+                    </div>
+                </a>
+                <a href="mailto:gifts@magic.com">
+                    <div class="footer_card">
+                        <img src="./img/snaik_img.png" alt="snaik" class="footer_img">
+                        <span class="action_large">gifts@magic.com</span>
+                        <h3>write us</h3>
+                    </div>
+                </a>
             </div>
-            <div class="contact_information">
+            <div class="contact_information" id="contacts">
                 <div class="socials">
                     <img src="./img/telegram.png" alt="telegram" class="socials_img">
                     <img src="./img/facebook.png" alt="facebook" class="socials_img">
@@ -167,7 +184,7 @@
                     <img src="./img/X.png" alt="x" class="socials_img">
                 </div>
                 <p>&#169; Copyright 2025, All Rights Reserved</p>
-                <span class="caption">Made in Rolling Scopes School</span>
+                <a href="https://rs.school/"><span class="caption">Made in Rolling Scopes School</span></a>
             </div>
         </div>
     </footer>

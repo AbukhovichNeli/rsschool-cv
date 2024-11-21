@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #181C29;
+    background-color: white;
 }
 
 h1 {
@@ -113,32 +114,27 @@ a {
 
 .logo_container:hover {}
 
-.menu_container {
+header .menu_container {
     display: inline-flex;
-    padding: 12px 20px;
-    list-style: none;
+    list-style-type: none;
     text-transform: uppercase;
     width: 376px;
-    justify-content: space-around;
+    height: 40px;
     font-size: 12px;
+    align-items: center;
+    justify-content: space-around;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
-.chapter {
-    display: flex;
-    width: 78px;
+header .menu_container .menu_item a {
+    color: #181C29;
     padding: 12px 20px;
     background-color: white;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     border-radius: 12px;
-}
-
-.chapter:hover {
-    background-color: rgba(255, 70, 70, 0.1);
-    color: #FF4646;
+    &:hover {
+        background-color: rgba(255, 70, 70, 0.1);
+        color: #FF4646;
+    }
 }
 
 header {
@@ -175,7 +171,7 @@ header {
     gap: 12px;
 }
 
-.action_small {
+.action_small_btn {
     background-color: #181C29;
     color: white;
     width: 235px;
@@ -186,7 +182,7 @@ header {
     border-radius: 20px;
 }
 
-.action_small:hover {
+.action_small_btn:hover {
     background-color: white;
     color: #181C29;
 }
@@ -297,6 +293,10 @@ header {
     height: 342px;
     border-radius: 20px;
 }
+.card:hover .card_text h3 {
+    color: #FF4646;
+}
+
 .card_text {
     background-color: white;
     display: flex;
@@ -423,4 +423,60 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 12px;
+}
+
+.gifts {
+    width: 1440px;
+    height: auto;
+    padding: 60px 0;
+    background-image: url(./img/bg-garland.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover contain;
+    background-color: #FF4646;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group_cards_giftPage {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 1276px;
+}
+
+.tittle_gifts {
+    width: 426px;
+    height: 144px;
+    text-align: center;
+    color: white;
+}
+
+.gift_tab {
+    display: inline-flex;
+    list-style-type: none;
+    width: 474px;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+.gifts .gift_tab .tab_item a{
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+#all {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer .footer_container .group_footer_cards a, footer .footer_container .contact_information a{
+    color: #181C29;
 }
