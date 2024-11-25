@@ -1,53 +1,59 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     color: #181C29;
+    background-color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 32px;
     font-weight: 600;
-    line-height: 150%;
-    letter-spacing: 18%;
+    line-height: 1.5em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     margin: 0;
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 24px;
     font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 16%;
+    line-height: 1.52rem;
+    letter-spacing: 0.16rem;
     text-transform: uppercase;
     margin: 0;
 }
 
 h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 16px;
     font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 8%;
+    line-height: 1.52rem;
+    letter-spacing: 0.08rem;
     text-transform: uppercase;
     margin: 0;
 }
 
 h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 12px;
     font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 5%;
+    line-height: 1.3rem;
+    letter-spacing: 0.05rem;
     text-transform: uppercase;
     margin: 0;
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
-    line-height: 148%;
+    line-height: 1.48rem;
     margin: 0;
 }
 
@@ -55,8 +61,8 @@ p {
     font-family: Montserrat;
     font-size: 24px;
     font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 16%;
+    line-height: 1.52rem;
+    letter-spacing: 0.16rem;
     text-transform: uppercase;
     margin: 0;
 }
@@ -65,8 +71,8 @@ p {
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 5%;
+    line-height: 1.3rem;
+    letter-spacing: 0.05rem;
     text-transform: uppercase;
 }
 
@@ -74,8 +80,8 @@ p {
     font-family: Allura;
     font-size: 24px;
     font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 5%;
+    line-height: 1rem;
+    letter-spacing: 0.05rem;
     margin: 0;
 }
 
@@ -113,32 +119,28 @@ a {
 
 .logo_container:hover {}
 
-.menu_container {
+header .menu_container {
     display: inline-flex;
-    padding: 12px 20px;
-    list-style: none;
+    list-style-type: none;
     text-transform: uppercase;
     width: 376px;
-    justify-content: space-around;
+    height: 40px;
     font-size: 12px;
+    align-items: center;
+    justify-content: space-around;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
-.chapter {
-    display: flex;
-    width: 78px;
+header .menu_container .menu_item a {
+    color: #181C29;
     padding: 12px 20px;
     background-color: white;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     border-radius: 12px;
-}
 
-.chapter:hover {
-    background-color: rgba(255, 70, 70, 0.1);
-    color: #FF4646;
+    &:hover {
+        background-color: rgba(255, 70, 70, 0.1);
+        color: #FF4646;
+    }
 }
 
 header {
@@ -146,10 +148,13 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
+    width: 1440px;
+    height: 64px;
 }
 
 .hero_section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: #FF4646;
@@ -159,8 +164,9 @@ header {
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
     background-size: cover, contain;
+    padding: 60px;
     min-height: 524px;
-    border-radius: 20px 20px 0 0;
+    color: white;
 }
 
 .hero_container {
@@ -175,7 +181,7 @@ header {
     gap: 12px;
 }
 
-.action_small {
+.action_small_btn {
     background-color: #181C29;
     color: white;
     width: 235px;
@@ -186,13 +192,14 @@ header {
     border-radius: 20px;
 }
 
-.action_small:hover {
+.action_small_btn:hover {
     background-color: white;
     color: #181C29;
 }
 
 .about_container {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: flex-start;
     background: white;
@@ -200,10 +207,17 @@ header {
     width: 1276px;
     border-radius: 20px;
     margin: 60px;
+    flex-direction: row;
+}
+
+.img_santa_snowman {
     background-image: url(./img/santa_img.png);
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    position: absolute;
+    right: 0;
+    width: 638px;
+    height: 528px;
+    border-radius: 20px;
 }
 
 .about_text_box {
@@ -217,7 +231,10 @@ header {
     color: #181C29;
 }
 
-.slider_section,.best_gift_section,.about_section,.CTA_section  {
+.slider_section,
+.best_gift_section,
+.about_section,
+.CTA_section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,6 +284,12 @@ header {
     border-radius: 20px;
 }
 
+#next {
+    background-color: white;
+    border: white;
+    color: #FF4646;
+}
+
 .next_back_btn {
     display: flex;
     flex-direction: row;
@@ -274,10 +297,12 @@ header {
     width: 1240px;
     justify-content: flex-end;
 }
-.arrow_btn:hover  {
+
+.arrow_btn:hover {
     color: white;
     border: 1px solid white;
 }
+
 .arrow_btn:active {
     background-color: white;
     border: white;
@@ -291,12 +316,25 @@ header {
     flex-direction: column;
 }
 
+.best_gift_container_giftPage {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
 .card {
     background-color: #ECF3F8;
     width: 310px;
     height: 342px;
     border-radius: 20px;
+    position: relative;
 }
+
+.card:hover .card_text h3 {
+    color: #FF4646;
+}
+
 .card_text {
     background-color: white;
     display: flex;
@@ -311,6 +349,7 @@ header {
     box-sizing: border-box;
     padding: 20px 20px 0 20px;
 }
+
 .group_cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -368,6 +407,7 @@ hr {
 footer {
     background-color: white;
     height: 496px;
+    width: 1440px;
 }
 
 .footer_card {
@@ -413,6 +453,11 @@ footer {
 .socials_img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
+}
+
+.socials_img:hover {
+    color: #FF4646;
 }
 
 .contact_information {
@@ -423,4 +468,418 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 12px;
+}
+
+.gifts {
+    width: 1440px;
+    height: auto;
+    padding: 60px 0;
+    background-image: url(./img/bg-garland.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover contain;
+    background-color: #FF4646;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group_cards_giftPage {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 1276px;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    margin: auto 0 auto auto;
+    width: 40px;
+    height: 40px;
+    background-image: url(./img/Burger.png);
+    background-size: cover contain;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.tittle_gifts {
+    width: 426px;
+    height: 144px;
+    text-align: center;
+    color: white;
+}
+
+.gift_tab {
+    display: inline-flex;
+    list-style-type: none;
+    width: 474px;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+.gifts .gift_tab .tab_item a {
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+#all {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer .footer_container .group_footer_cards a,
+footer .footer_container .contact_information a {
+    color: #181C29;
+}
+
+.wrapper {
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger_menu_section {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+    ;
+}
+
+.burger_menu_section .menu_container_small .menu_item_small a {
+    color: #181C29;
+}
+
+.menu_container_small {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style-type: none;
+    gap: 20px;
+}
+
+footer .contact_information .caption:hover,
+footer .footer_container .group_footer_cards .footer_card .action_large:hover {
+    color: #FF4646;
+}
+
+@media (min-width: 1440px) {
+    header {
+        width: 100%;
+    }
+
+    .wrapper {
+        width: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+    header {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger-toggle:checked+.burger+.burger_menu_section {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 60px;
+        z-index: 10;
+        justify-content: center;
+        align-items: center;
+    }
+    .burger-toggle:checked + .burger {
+        background-image: url(./img/Burger_close.png);
+        background-size: cover contain;
+        background-repeat: no-repeat;
+    }
+
+    .about_container {
+        width: 752px;
+        height: 528px;
+    }
+
+    .about_text_box {
+        width: 256px;
+        height: 436px;
+        margin: 0;
+        padding: 40px 60px;
+        justify-content: center;
+    }
+
+    .about_section, .slider_section, .best_gift_section, .CTA_section {
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+        overflow-x: hidden;
+    }
+
+    .hero_section {
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+        background-size: cover;
+        padding: 60px 0;
+    }
+
+    .img_santa_snowman {
+        width: 376px;
+        height: 528px;
+        background-position: center;
+    }
+
+    .slider_container {
+        width: 752px;
+        justify-content: center;
+    }
+
+    .next_back_btn {
+        width: 752px;
+    }
+
+    .best_gift_container {
+        width: 752px;
+        height: 788px;
+    }
+
+    .group_cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 12px;
+        width: 632px;
+        margin: auto;
+    }
+
+    .group_footer_cards {
+        display: flex;
+        flex-direction: column;
+        width: 752px;
+    }
+
+    footer {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        width: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer_card {
+        width: 752px;
+        height: 204px;
+    }
+
+    .contact_information {
+        width: 752px;
+    }
+
+    .group_cards_giftPage {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        width: 632px;
+        height: 1024px;
+        margin: 0 auto;
+        overflow-y: scroll;
+    }
+
+}
+
+@media (min-width: 380px) and (max-width: 767px) {
+    header {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .wrapper {
+        width: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger-toggle:checked+.burger+.burger_menu_section {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .burger-toggle:checked + .burger {
+        background-image: url(./img/Burger_close.png);
+        background-size: cover contain;
+        background-repeat: no-repeat;
+    }
+
+    .about_section, .slider_section, .best_gift_section, .CTA_section {
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+        padding: 60px 0;
+    }
+
+    .hero_section {
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+        background-size: cover;
+        padding: 60px 0;
+    }
+
+    .gifts {
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+        background-image: url(./img/bg-garland.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .hero_container {
+        width: 364px;
+        height: 452px;
+    }
+
+    .about_container {
+        width: 364px;
+        height: 880px;
+        flex-direction: column;
+    }
+
+    .about_text_box {
+        width: 324px;
+        height: 352px;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .img_santa_snowman {
+        width: 364px;
+        height: 528px;
+        bottom: 0;
+        background-position: center;
+    }
+
+    .slider_container {
+        width: 364px;
+        justify-content: center;
+    }
+
+    .next_back_btn {
+        width: 364px;
+    }
+
+    .best_gift_container {
+        width: 364px;
+        height: 1496px;
+    }
+
+    .group_cards {
+    grid-template-columns: repeat(1, 1fr);
+    overflow-y: scroll;
+    width: 310px;
+    margin: auto;
+    }
+
+    .CTA_container {
+        width: 364px;
+        height: 584px;
+    }
+
+    .group_footer_cards {
+        display: flex;
+        flex-direction: column;
+        width: 364px;
+    }
+
+    footer {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .footer_card {
+        width: 364px;
+        height: 204px;
+    }
+
+    .contact_information {
+        width: 364px;
+    }
+
+    .best_gift_container {
+        height: 812px;
+        width: 364px;
+    }
+
+    .group_cards_giftPage {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        width: 310px;
+        height: 812px;
+        margin: auto;
+        overflow-y: scroll;
+    }
+
+    .tittle_gifts {
+        width: 364px;
+        height: 240px;
+    }
+
+    .gift_tab {
+        width: 354px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .gifts .gift_tab .tab_item a {
+        padding: 12px 8px;
+    }
 }
