@@ -867,3 +867,9 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         padding: 12px 8px;
     }
 }
+
+@media (hover: hover) {
+button:hover {
+background-color: crimson;
+}
+}
