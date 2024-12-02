@@ -1,4 +1,3 @@
-//меню
 const burger_btn = document.querySelector(".burger");
 const menu = document.querySelector(".burger_menu_section");
 let isMenuOpen = false;
