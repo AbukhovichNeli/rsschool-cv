@@ -298,6 +298,20 @@ header {
     border: 1px solid white;
 }
 
+.scrollUP {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 56px;
+    border-radius: 100px;
+    width: 56px;
+    background-color: white;
+    border: white;
+    color: #FF4646;
+}
+
 .active_btn:active {
     background-color: white;
     border: white;
@@ -388,7 +402,10 @@ hr {
     border-radius: 20px;
 }
 
-.dath, .hours, .minutes, .seconds{
+.dath,
+.hours,
+.minutes,
+.seconds {
     display: flex;
     flex-direction: column;
     width: 80px;
@@ -491,7 +508,7 @@ footer {
 }
 
 .burger {
-   display: none;
+    display: none;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -527,7 +544,7 @@ footer {
 .gift_tab {
     display: inline-flex;
     list-style-type: none;
-    width: 474px;
+    width: 620px;
     height: 40px;
     justify-content: space-around;
     align-items: center;
@@ -540,7 +557,14 @@ footer {
     border-radius: 12px;
 }
 
-#all {
+.tab_item {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.active_tab {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -586,7 +610,13 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
 }
 
 @media (min-width: 1440px) {
-    .hero_section, .about_section, .slider_section, .CTA_section, .best_gift_section, .gifts {
+
+    .hero_section,
+    .about_section,
+    .slider_section,
+    .CTA_section,
+    .best_gift_section,
+    .gifts {
         width: 100%;
         overflow-x: hidden;
         box-sizing: border-box;
@@ -612,7 +642,10 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         justify-content: center;
     }
 
-    .about_section, .slider_section, .best_gift_section, .CTA_section {
+    .about_section,
+    .slider_section,
+    .best_gift_section,
+    .CTA_section {
         width: 100%;
         height: auto;
         padding: 60px 0;
@@ -636,6 +669,17 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     .slider_container {
         width: 752px;
         justify-content: center;
+    }
+
+    .gifts {
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+        background-image: url(./img/bg-garland.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        overflow-x: hidden;
     }
 
     .next_back_btn {
@@ -713,7 +757,10 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         justify-content: center;
     }
 
-    .about_section, .slider_section, .best_gift_section, .CTA_section {
+    .about_section,
+    .slider_section,
+    .best_gift_section,
+    .CTA_section {
         width: 100%;
         height: auto;
         overflow-x: hidden;
@@ -780,9 +827,9 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     }
 
     .group_cards {
-    grid-template-columns: repeat(1, 1fr);
-    width: 310px;
-    margin: auto;
+        grid-template-columns: repeat(1, 1fr);
+        width: 310px;
+        margin: auto;
     }
 
     .CTA_container {
@@ -802,6 +849,10 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         justify-content: center;
         align-items: center;
         overflow-x: hidden;
+    }
+
+    .scrollUP {
+        display: none;
     }
 
     .footer_card {
@@ -843,13 +894,14 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
 }
 
 @media (hover: none) and (pointer: coarse) {
+
     .logo_container:hover,
     .action_small_btn:hover,
     .arrow_btn:hover,
     .card:hover .card_text h3,
     footer .contact_information .caption:hover,
     footer .footer_container .group_footer_cards .footer_card .action_large:hover {
-        background-color: inherit; 
+        background-color: inherit;
         color: inherit;
         border: none;
     }
