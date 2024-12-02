@@ -67,13 +67,13 @@ let slider = document.querySelector(".text_love_create_love_dream");
 let i = 0;
 function scroll_slider_next() {
     slider.scrollBy({
-        left: 100,
+        left: 350,
         behavior: 'smooth'
     });
 }
 function scroll_slider_back() {
     slider.scrollBy({
-        left: -100,
+        left: -350,
         behavior: 'smooth'
     });
 }
@@ -93,11 +93,31 @@ function updateStatusScroll() {
         }
     }
 }
-next_btn.addEventListener ('click', function() {
+next_btn.addEventListener('click', function () {
     scroll_slider_next(),
-    updateStatusScroll()
+        updateStatusScroll()
 });
-back_btn.addEventListener('click', function() {
+back_btn.addEventListener('click', function () {
     scroll_slider_back(),
-    updateStatusScroll()
-})
+        updateStatusScroll()
+});
+
+fetch('./gifts.json')
+    .then(response => response.json())
+    .then(data => {
+        const gift_cards = document.querySelectorAll(".card");
+        function getRandomCard() {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            return data[randomIndex];
+        }
+        gift_cards.forEach(card => {
+            const gift = getRandomCard();
+            card.innerHTML =
+                `<img src="/img/${gift.category}.png" alt="${gift.name}">
+                <div class="card_text">
+                    <h4">${gift.category}</h4>
+                    <h3>${gift.name}</h3>
+                </div>`;
+        });
+    })
+    .catch(error => console.error('Ошибка загрузки JSON:', error));
