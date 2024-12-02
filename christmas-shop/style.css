@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -277,17 +278,11 @@ header {
 .arrow_btn {
     width: 56px;
     height: 56px;
-    padding: 20PX;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: transparent;
     color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-}
-
-#next {
-    background-color: white;
-    border: white;
-    color: #FF4646;
 }
 
 .next_back_btn {
@@ -298,12 +293,12 @@ header {
     justify-content: flex-end;
 }
 
-.arrow_btn:hover {
+.active_btn {
     color: white;
     border: 1px solid white;
 }
 
-.arrow_btn:active {
+.active_btn:active {
     background-color: white;
     border: white;
     color: #FF4646;
@@ -329,7 +324,6 @@ header {
     height: 342px;
     border-radius: 20px;
     gap: 20px;
-    position: relative;
 }
 
 .card:hover .card_text h3 {
@@ -340,9 +334,9 @@ header {
     background-color: white;
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 8px;
     align-items: flex-start;
-    position: absolute;
     width: 310px;
     height: 112px;
     border-radius: 20px;
@@ -497,17 +491,26 @@ footer {
 }
 
 .burger {
-    display: none;
+   display: none;
     position: relative;
+    justify-content: center;
+    align-items: center;
     z-index: 999;
-    margin: auto 0 auto auto;
     width: 40px;
     height: 40px;
-    background-image: url(./img/Burger.png);
-    background-size: cover contain;
-    background-repeat: no-repeat;
-    border: none;
+    transform: rotate(90deg);
     cursor: pointer;
+    padding: 16px 10px;
+    transition: transform 0.3 ease;
+}
+
+.bar {
+    transform-origin: center;
+    height: 20px;
+    border: 1px solid #181C29;
+    margin-right: 8px;
+    border-radius: 1px;
+    transition: transform 0.3s ease;
 }
 
 .burger-toggle {
@@ -558,10 +561,11 @@ footer .footer_container .contact_information a {
     display: none;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 1);
-    ;
+    transition: transform 0.3 ease;
 }
 
 .burger_menu_section .menu_container_small .menu_item_small a {
@@ -581,17 +585,18 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     color: #FF4646;
 }
 
+@media (min-width: 1440px) {
+    .hero_section, .about_section, .slider_section, .CTA_section, .best_gift_section, .gifts {
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding: 60px;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1439px) {
     header {
         width: 100%;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
     }
 
     .about_container {
@@ -611,7 +616,7 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         width: 100%;
         height: auto;
         padding: 60px 0;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .hero_section {
@@ -683,7 +688,7 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr);
         width: 632px;
-        height: 1024px;
+        height: 2112px;
         margin: 0 auto;
     }
 
@@ -817,7 +822,7 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(12, 1fr);
         width: 310px;
-        height: 812px;
+        height: 4236px;
         margin: auto;
     }
 
