@@ -4,11 +4,17 @@ let isMenuOpen = false;
 function toggleMenu() {
     if (isMenuOpen) {
         menu.style.display = "";
-        burger_btn.style.backgroundImage = 'url(./img/Burger.png)';
+        burger_btn.querySelectorAll(".bar")[0].style.transform = '';
+        burger_btn.querySelectorAll(".bar")[1].style.transform = '';
+        burger_btn.querySelector(".bar").style.marginRight = '';
+        document.body.style.overflow = "auto";
     }
     else {
         menu.style.display = "flex";
-        burger_btn.style.backgroundImage = 'url(./img/Burger_close.png)';
+        burger_btn.querySelectorAll(".bar")[0].style.transform = 'rotate(45deg)';
+        burger_btn.querySelectorAll(".bar")[1].style.transform = 'rotate(-45deg)';
+        burger_btn.querySelector(".bar").style.marginRight = '-1.5px';
+        document.body.style.overflow = "hidden";
     }
     isMenuOpen = !isMenuOpen;
 }
@@ -23,7 +29,7 @@ links.forEach(link => {
 function timer() {
     let currentDate = new Date();
     let NewYear = new Date('2025-01-01 00:00:00');
-    let result = ((NewYear - currentDate) + 1000)/1000; //преобразуем в секунды
+    let result = ((NewYear - currentDate) + 1000) / 1000;
     let day = document.querySelector(".dath h2");
     let hours = document.querySelector(".hours h2");
     let minutes = document.querySelector(".minutes h2");
@@ -41,9 +47,9 @@ function timer() {
         return undefined;
     }
     let resultSeconds = Math.floor(result % 60);
-    let resultMinutes = Math.floor((result/60) % 60);
-    let resultHours = Math.floor((result/60/60) % 24);
-    let resultDays = Math.floor((result/ 60/60/24));
+    let resultMinutes = Math.floor((result / 60) % 60);
+    let resultHours = Math.floor((result / 60 / 60) % 24);
+    let resultDays = Math.floor((result / 60 / 60 / 24));
     if (resultSeconds < 10) resultSeconds = '0' + resultSeconds;
     if (resultMinutes < 10) resultMinutes = '0' + resultMinutes;
     if (resultHours < 10) resultHours = '0' + resultHours;
@@ -52,8 +58,46 @@ function timer() {
     hours.innerHTML = resultHours;
     minutes.innerHTML = resultMinutes;
     seconds.innerHTML = resultSeconds;
-
-    
 }
-
 setInterval(timer, 1000);
+
+const next_btn = document.querySelector("#next");
+const back_btn = document.querySelector("#back");
+let slider = document.querySelector(".text_love_create_love_dream");
+let i = 0;
+function scroll_slider_next() {
+    slider.scrollBy({
+        left: 100,
+        behavior: 'smooth'
+    });
+}
+function scroll_slider_back() {
+    slider.scrollBy({
+        left: -100,
+        behavior: 'smooth'
+    });
+}
+function updateStatusScroll() {
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        next_btn.classList.remove('active_btn');
+        back_btn.classList.add('active_btn');
+    }
+    else {
+        if (slider.scrollLeft > 0) {
+            back_btn.classList.add('active_btn');
+            next_btn.classList.add('active_btn');
+        }
+        else {
+            back_btn.classList.remove('active_btn');
+            next_btn.classList.add('active_btn');
+        }
+    }
+}
+next_btn.addEventListener ('click', function() {
+    scroll_slider_next(),
+    updateStatusScroll()
+});
+back_btn.addEventListener('click', function() {
+    scroll_slider_back(),
+    updateStatusScroll()
+})
