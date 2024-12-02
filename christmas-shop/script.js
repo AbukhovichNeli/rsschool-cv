@@ -19,4 +19,5 @@ links.forEach(link => {
         if (isMenuOpen) toggleMenu();
     })
 })
-console.log(linkMenu);
+
+
