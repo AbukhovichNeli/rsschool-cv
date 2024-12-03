@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -277,17 +278,11 @@ header {
 .arrow_btn {
     width: 56px;
     height: 56px;
-    padding: 20PX;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: transparent;
     color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-}
-
-#next {
-    background-color: white;
-    border: white;
-    color: #FF4646;
 }
 
 .next_back_btn {
@@ -298,12 +293,26 @@ header {
     justify-content: flex-end;
 }
 
-.arrow_btn:hover {
+.active_btn {
     color: white;
     border: 1px solid white;
 }
 
-.arrow_btn:active {
+.scrollUP {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 56px;
+    border-radius: 100px;
+    width: 56px;
+    background-color: white;
+    border: white;
+    color: #FF4646;
+}
+
+.active_btn:active {
     background-color: white;
     border: white;
     color: #FF4646;
@@ -328,7 +337,7 @@ header {
     width: 310px;
     height: 342px;
     border-radius: 20px;
-    position: relative;
+    gap: 20px;
 }
 
 .card:hover .card_text h3 {
@@ -339,9 +348,9 @@ header {
     background-color: white;
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 8px;
     align-items: flex-start;
-    position: absolute;
     width: 310px;
     height: 112px;
     border-radius: 20px;
@@ -393,7 +402,10 @@ hr {
     border-radius: 20px;
 }
 
-.dath {
+.dath,
+.hours,
+.minutes,
+.seconds {
     display: flex;
     flex-direction: column;
     width: 80px;
@@ -498,14 +510,24 @@ footer {
 .burger {
     display: none;
     position: relative;
-    margin: auto 0 auto auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
     width: 40px;
     height: 40px;
-    background-image: url(./img/Burger.png);
-    background-size: cover contain;
-    background-repeat: no-repeat;
-    border: none;
+    transform: rotate(90deg);
     cursor: pointer;
+    padding: 16px 10px;
+    transition: transform 0.3 ease;
+}
+
+.bar {
+    transform-origin: center;
+    height: 20px;
+    border: 1px solid #181C29;
+    margin-right: 8px;
+    border-radius: 1px;
+    transition: transform 0.3s ease;
 }
 
 .burger-toggle {
@@ -522,7 +544,7 @@ footer {
 .gift_tab {
     display: inline-flex;
     list-style-type: none;
-    width: 474px;
+    width: 620px;
     height: 40px;
     justify-content: space-around;
     align-items: center;
@@ -535,7 +557,14 @@ footer {
     border-radius: 12px;
 }
 
-#all {
+.tab_item {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.active_tab {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -552,11 +581,15 @@ footer .footer_container .contact_information a {
 }
 
 .burger_menu_section {
+    position: absolute;
     display: none;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
     background-color: rgba(255, 255, 255, 1);
-    ;
+    transition: transform 0.3 ease;
 }
 
 .burger_menu_section .menu_container_small .menu_item_small a {
@@ -577,48 +610,23 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
 }
 
 @media (min-width: 1440px) {
-    header {
+
+    .hero_section,
+    .about_section,
+    .slider_section,
+    .CTA_section,
+    .best_gift_section,
+    .gifts {
         width: 100%;
-    }
-
-    .wrapper {
-        width: 100vh;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .burger {
-        display: none;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding: 60px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
     header {
         width: 100%;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    .burger-toggle:checked+.burger+.burger_menu_section {
-        display: flex;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 60px;
-        z-index: 10;
-        justify-content: center;
-        align-items: center;
-    }
-    .burger-toggle:checked + .burger {
-        background-image: url(./img/Burger_close.png);
-        background-size: cover contain;
-        background-repeat: no-repeat;
     }
 
     .about_container {
@@ -634,11 +642,14 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         justify-content: center;
     }
 
-    .about_section, .slider_section, .best_gift_section, .CTA_section {
+    .about_section,
+    .slider_section,
+    .best_gift_section,
+    .CTA_section {
         width: 100%;
         height: auto;
         padding: 60px 0;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .hero_section {
@@ -658,6 +669,17 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     .slider_container {
         width: 752px;
         justify-content: center;
+    }
+
+    .gifts {
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+        background-image: url(./img/bg-garland.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        overflow-x: hidden;
     }
 
     .next_back_btn {
@@ -710,9 +732,8 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr);
         width: 632px;
-        height: 1024px;
+        height: 2112px;
         margin: 0 auto;
-        overflow-y: scroll;
     }
 
 }
@@ -736,23 +757,10 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         justify-content: center;
     }
 
-    .burger-toggle:checked+.burger+.burger_menu_section {
-        display: flex;
-        position: absolute;
-        width: 100%;
-        top: 60px;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .burger-toggle:checked + .burger {
-        background-image: url(./img/Burger_close.png);
-        background-size: cover contain;
-        background-repeat: no-repeat;
-    }
-
-    .about_section, .slider_section, .best_gift_section, .CTA_section {
+    .about_section,
+    .slider_section,
+    .best_gift_section,
+    .CTA_section {
         width: 100%;
         height: auto;
         overflow-x: hidden;
@@ -776,7 +784,6 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         background-position: top;
         background-size: contain;
         overflow-x: hidden;
-        overflow-y: scroll;
     }
 
     .hero_container {
@@ -820,10 +827,9 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     }
 
     .group_cards {
-    grid-template-columns: repeat(1, 1fr);
-    overflow-y: scroll;
-    width: 310px;
-    margin: auto;
+        grid-template-columns: repeat(1, 1fr);
+        width: 310px;
+        margin: auto;
     }
 
     .CTA_container {
@@ -845,6 +851,10 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         overflow-x: hidden;
     }
 
+    .scrollUP {
+        display: none;
+    }
+
     .footer_card {
         width: 364px;
         height: 204px;
@@ -855,7 +865,7 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
     }
 
     .best_gift_container {
-        height: 812px;
+        height: 1404px;
         width: 364px;
     }
 
@@ -863,9 +873,8 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(12, 1fr);
         width: 310px;
-        height: 812px;
+        height: 4236px;
         margin: auto;
-        overflow-y: scroll;
     }
 
     .tittle_gifts {
@@ -881,5 +890,19 @@ footer .footer_container .group_footer_cards .footer_card .action_large:hover {
 
     .gifts .gift_tab .tab_item a {
         padding: 12px 8px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .logo_container:hover,
+    .action_small_btn:hover,
+    .arrow_btn:hover,
+    .card:hover .card_text h3,
+    footer .contact_information .caption:hover,
+    footer .footer_container .group_footer_cards .footer_card .action_large:hover {
+        background-color: inherit;
+        color: inherit;
+        border: none;
     }
 }
